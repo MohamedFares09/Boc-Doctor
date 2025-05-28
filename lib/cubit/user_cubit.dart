@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:s7tk/core/api/api_consumer.dart';
-
+import 'package:s7tk/core/api/api_consumer';
 
 part 'user_state.dart';
 

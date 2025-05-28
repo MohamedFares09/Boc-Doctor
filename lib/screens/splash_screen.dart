@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:s7tk/screens/login_screen.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+import 'package:s7tk/widget/custom_image.dart';
+
+
+class SplashScreens extends StatefulWidget {
+  const SplashScreens({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreens> createState() => _SplashScreensState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreensState extends State<SplashScreens> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3)).then((value) => Navigator.of(context).pushReplacementNamed("/login"));
     super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const LoginScreens()));
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("مرحبا بكم في التطبيق!")
-      ,),
-      );
+      body: Center(
+        child: CustomImage()
+      ),
+    );
   }
 }

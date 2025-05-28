@@ -1,6 +1,5 @@
-
 import 'package:dio/dio.dart';
-import 'package:s7tk/core/api/api_consumer.dart';
+import 'package:s7tk/core/api/api_consumer';
 
 
 class DioConsumer extends ApiConsuimer {
