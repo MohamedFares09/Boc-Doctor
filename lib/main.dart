@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:s7tk/screens/login_screen.dart';
+import 'package:s7tk/screens/splash_screen.dart';
 
 
 
@@ -13,8 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
-     home: Scaffold(),
+      routes: {
+        "/login" : (context) => const LoginScreen(),
+      },
+     home: SplashScreen(),
     );
   }
 }
