@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:s7tk/widget/login_screen_body.dart';
+import 'package:s7tk/widget/sign_up_screen_body.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,8 +20,8 @@ class _LoginScreensState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const SizedBox(height: 80),
-          // Container الخاص بالأزرار
+           SizedBox(height: 80.h),
+          
           Container(
             height: 50,
             margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -28,7 +31,7 @@ class _LoginScreensState extends State<LoginScreen> {
             ),
             child: Row(
               children: [
-                // زر "تسجيل الدخول"
+              
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
@@ -67,7 +70,7 @@ class _LoginScreensState extends State<LoginScreen> {
                         color: !isLogin
                             ? const Color(0xFF2BD0CE)
                             : Colors.transparent,
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(30.sp),
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -83,13 +86,12 @@ class _LoginScreensState extends State<LoginScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 30),
+           SizedBox(height: 30.h),
 
-          // هنا تقدر تضيف محتوى كل شاشة بناءً على isLogin
           if (isLogin)
-            const Text("هنا محتوى تسجيل الدخول")
+            LoginScreenBody()
           else
-            const Text("هنا محتوى إنشاء الحساب"),
+             SignUpScreenBody(),
         ],
       ),
     );
